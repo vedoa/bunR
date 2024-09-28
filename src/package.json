@@ -1,0 +1,23 @@
+{
+	"name": "webrbun",
+	"module": "index.ts",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.2",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@elysiajs/swagger": "1.1.1",
+		"elysia": "1.1.16",
+		"webr": "0.4.2"
+	},
+	"scripts": {
+		"bFormat": "bunx biome format --write .",
+		"bLint": "bunx biome lint .",
+		"rDeps": "bun run ./R/setup-dependencies.ts",
+		"runREST": "bun run ./index.ts"
+	}
+}

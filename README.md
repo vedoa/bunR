@@ -90,6 +90,7 @@ I will build a REST api using
 - [ElysiaJS](https://elysiajs.com/) - backend/routing etc.
 - @elysiajs/swagger - plugin to auto-generate openapi page
 - [WebR](https://docs.r-wasm.org/webr/latest/) - model fitting and random number generation
+- [biomejs](https://biomejs.dev/) - lint and format
 
 Running
 

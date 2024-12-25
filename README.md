@@ -55,7 +55,7 @@ Add the dependencies
 bun add elysia @elysiajs/swagger webr
 ```
 
-add dev dependencies for linitng and formating
+add dev dependencies for linting and formatting
 
 ```
 bun add --dev --exact @biomejs/biome

@@ -1,0 +1,12 @@
+{
+	"image": "oven/bun:1.1.42-debian",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"biomejs.biome"
+			]
+		}
+	},
+	"appPort": 3000
+}

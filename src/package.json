@@ -3,20 +3,18 @@
 	"module": "index.ts",
 	"type": "module",
 	"devDependencies": {
-		"@biomejs/biome": "1.9.2",
-		"@types/bun": "latest"
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "^1.1.14"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0"
+		"typescript": "^5.7.2"
 	},
 	"dependencies": {
-		"@elysiajs/swagger": "1.1.1",
-		"elysia": "1.1.16",
-		"webr": "0.4.2"
+		"@elysiajs/swagger": "^1.2.0",
+		"elysia": "^1.2.6",
+		"webr": "^0.4.2"
 	},
 	"scripts": {
-		"bFormat": "bunx biome format --write .",
-		"bLint": "bunx biome lint .",
 		"rDeps": "bun run ./R/setup-dependencies.ts",
 		"runREST": "bun run ./index.ts"
 	}

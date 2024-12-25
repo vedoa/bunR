@@ -1,0 +1,6 @@
+{
+    "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "biome.lspBin": "./src/node_modules/@biomejs/cli-linux-x64/biome"
+}

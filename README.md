@@ -12,14 +12,18 @@ You will need to either [install bun](https://bun.sh/docs/installation) or use a
 Get the image that you like the most. Example
 
 ```
-docker pull oven/bun:1.1.29-debian
+docker pull oven/bun:1.1.42-debian
 ```
 
 Run the image mounting the src folder into the container
 
 ```
-docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.1.29-debian bash
+docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.1.42-debian bash
 ```
+
+### VS Code setup
+
+Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.1.42-debian container.
 
 ## Recreate setup from scratch
 
@@ -54,7 +58,7 @@ bun add elysia@1.1.16 @elysiajs/swagger@1.1.1 webr@0.4.2
 add dev dependencies for linitng and formating
 
 ```
-bun add --dev --exact @biomejs/biome@1.9.2
+bun add --dev --exact @biomejs/biome
 bunx biome init
 ```
 

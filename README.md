@@ -52,7 +52,7 @@ To get started, run:
 Add the dependencies
 
 ```
-bun add elysia@1.1.16 @elysiajs/swagger@1.1.1 webr@0.4.2 
+bun add elysia @elysiajs/swagger webr
 ```
 
 add dev dependencies for linitng and formating
@@ -80,8 +80,6 @@ Add scripts to the package.json file for easier calling of repeated steps
 
 ```
 "scripts": {
-  "bFormat": "bunx biome format --write .",
-  "bLint": "bunx biome lint .",
   "rDeps": "bun run ./R/setup-dependencies.ts",
   "runREST": "bun run ./index.ts"
 }

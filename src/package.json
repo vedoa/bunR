@@ -4,14 +4,14 @@
 	"type": "module",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "^1.1.14"
+		"@types/bun": "^1.2.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5.7.2"
 	},
 	"dependencies": {
 		"@elysiajs/swagger": "^1.2.0",
-		"elysia": "^1.2.6",
+		"elysia": "^1.2.10",
 		"webr": "^0.4.2"
 	},
 	"scripts": {

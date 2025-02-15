@@ -3,9 +3,7 @@
   "extends": [
     "config:recommended"
   ],
-  {
-    "dockerfile": {
-      "fileMatch": ["^README\\.md"]
-    }
+  "dockerfile": {
+    "fileMatch": ["^README\\.md"]
   }
 }

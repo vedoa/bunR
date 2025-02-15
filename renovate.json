@@ -4,6 +4,6 @@
     "config:recommended"
   ],
   "dockerfile": {
-    "fileMatch": ["^README\\.md"]
+    "fileMatch": ["^README\\.md$"]
   }
 }

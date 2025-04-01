@@ -4,11 +4,10 @@
     {
       "fileMatch": ["README.md"],
       "matchStrings": [
-        "docker pull myimage:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
-        "docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app myimage:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "docker pull oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "depNameTemplate": "myimage",
-      "versioning": "semver"
+      "depNameTemplate": "oven/bun"
     }
   ]
 }

@@ -1,3 +1,14 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": ["README.md"],
+      "matchStrings": [
+        "docker pull oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "oven/bun",
+      "datasourceTemplate": "docker"
+    }
+  ]
 }

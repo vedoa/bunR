@@ -12,13 +12,13 @@ You will need to either [install bun](https://bun.sh/docs/installation) or use a
 Get the image that you like the most. Example
 
 ```
-docker pull oven/bun:1.2.8-debian
+docker pull oven/bun:1.2.9-debian
 ```
 
 Run the image mounting the src folder into the container
 
 ```
-docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.2.8-debian bash
+docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.2.9-debian bash
 ```
 
 ### VS Code setup

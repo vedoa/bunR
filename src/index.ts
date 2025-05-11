@@ -7,7 +7,7 @@ import type { RDouble, RFunction } from "webr";
 const webR = await setupR();
 
 const rnorm = (await webR.evalR("rnorm")) as RFunction;
-const minpack = (await getCustomRFunction("./R/minpack.R")) as RFunction;
+const minpack = (await getCustomRFunction(webR, "./R/minpack.R")) as RFunction;
 
 const app = new Elysia()
 	.use(swagger())

@@ -5,7 +5,8 @@
       "fileMatch": ["README.md"],
       "matchStrings": [
         "docker pull oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
-        "docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "prompt you to open the project in the bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "depNameTemplate": "oven/bun",
       "datasourceTemplate": "docker"

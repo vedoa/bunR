@@ -1,11 +1,16 @@
 import { WebR } from "webr";
 
+/**
+ * Helper function to setup R
+ * 
+ * @returns WebR object with necessary dependencies installed
+ */
 export const setupR = async (): Promise<WebR> => {
 	const webR = new WebR();
-
+	console.log("[webR] Setup started")
 	await webR.init();
-	await webR.FS.mkdir("/libraries");
-	await webR.FS.mount("NODEFS", { root: "./R/libraries" }, "/libraries");
-	await webR.evalR(".libPaths('/libraries')");
+	console.log("[webR] Install dependencies")
+	await webR.installPackages(["minpack.lm"]);
+	console.log("[webR] Setup finished")
 	return webR;
 };

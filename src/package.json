@@ -15,9 +15,6 @@
 		"webr": "0.4.3"
 	},
 	"scripts": {
-		"rDeps": "bun run ./R/setup-dependencies.ts",
-		"runREST": "bun run ./index.ts",
-		"runTest": "bun test",
-		"all": "bun rDeps && bun runTest"
+		"runREST": "bun run ./index.ts"
 	}
 }

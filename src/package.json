@@ -4,15 +4,15 @@
 	"type": "module",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "^1.2.0"
+		"@types/bun": "1.2.13"
 	},
 	"peerDependencies": {
-		"typescript": "^5.7.2"
+		"typescript": "5.7.2"
 	},
 	"dependencies": {
-		"@elysiajs/swagger": "^1.2.0",
-		"elysia": "^1.2.10",
-		"webr": "^0.4.2"
+		"@elysiajs/swagger": "1.3.0",
+		"elysia": "1.3.1",
+		"webr": "0.4.3"
 	},
 	"scripts": {
 		"rDeps": "bun run ./R/setup-dependencies.ts",

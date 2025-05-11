@@ -23,7 +23,7 @@ docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.2.1
 
 ### VS Code setup
 
-Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.2.7-debian container.
+Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.2.13-debian container.
 
 ## Recreate setup from scratch
 
@@ -74,13 +74,10 @@ output
 Hello via Bun!
 ```
 
-Make sure to have a folder called libraries under ./src/R otherwise the code will not work.
-
-Add scripts to the package.json file for easier calling of repeated steps
+Add script(s) to the package.json file for easier calling of repeated steps
 
 ```
 "scripts": {
-  "rDeps": "bun run ./R/setup-dependencies.ts",
   "runREST": "bun run ./index.ts"
 }
 ```
@@ -100,6 +97,6 @@ Running
 bun runREST
 ```
 
-will make the REST API available under localhost:3000. 
+will make the REST API available under localhost:3001. 
 
-You can test the endpoints with the default values using the openapi endpoint localhost:3000/swagger.
+You can test the endpoints with the default values using the openapi endpoint localhost:3001/swagger.

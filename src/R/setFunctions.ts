@@ -1,10 +1,16 @@
-import type { RObject } from "webr";
-import { setupR } from "./setupR";
+import type { RObject, WebR } from "webr";
 
+/**
+ * Helper method to run custom R script
+ * 
+ * @param webR Initialized WebR object 
+ * @param pathScript path to script
+ * @returns result of script as RObject
+ */
 export const getCustomRFunction = async (
+	webR: WebR,
 	pathScript: string,
 ): Promise<RObject> => {
-	const webR = await setupR();
 	const script = Bun.file(pathScript);
 	return await webR.evalR(await script.text());
 };

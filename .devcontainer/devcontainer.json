@@ -4,7 +4,8 @@
 		"vscode": {
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"biomejs.biome"
+				"biomejs.biome",
+				"oven.bun-vscode"
 			]
 		}
 	},

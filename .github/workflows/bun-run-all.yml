@@ -20,5 +20,6 @@ jobs:
       - name: Change to src and run Bun script
         run: |
           cd src
+          mkdir -p R/libraries
           bun install
           bun all

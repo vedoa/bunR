@@ -16,6 +16,8 @@
 	},
 	"scripts": {
 		"rDeps": "bun run ./R/setup-dependencies.ts",
-		"runREST": "bun run ./index.ts"
+		"runREST": "bun run ./index.ts",
+		"runTest": "bun test",
+		"all": "bun rDeps && bun runTest"
 	}
 }

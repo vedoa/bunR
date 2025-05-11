@@ -15,7 +15,11 @@ const app = new Elysia()
 	.get(
 		"/rnorm",
 		async ({ query }) => {
-			const result = (await rnorm(
+			if(query.seed !== undefined){
+				await webR.evalRVoid(`set.seed(${query.seed})`);
+			}
+			const result = (
+				await rnorm(
 				Math.floor(query.n === undefined ? 10 : query.n),
 				query.mean === undefined ? 0 : query.mean,
 				query.sd === undefined ? 1 : query.sd,
@@ -28,7 +32,8 @@ const app = new Elysia()
 			query: t.Object({
 				n: t.Optional(t.Numeric({ minimum: 1 })),
 				mean: t.Optional(t.Numeric({ default: 0 })),
-				sd: t.Optional(t.Numeric({ minimum: 0 })),
+				sd: t.Optional(t.Numeric({ minimum: 1 })),
+				seed: t.Optional(t.Numeric())
 			}),
 		},
 	)
@@ -52,8 +57,10 @@ const app = new Elysia()
 			}),
 		},
 	)
-	.listen(3000);
+	.listen(3001);
 
 console.log(
 	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
 );
+
+export default app;

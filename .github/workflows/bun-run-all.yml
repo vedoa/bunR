@@ -1,0 +1,24 @@
+name: Bun Run All
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  bun-run:
+    runs-on: ubuntu-latest
+    container:
+      image: oven/bun:1.2.13-debian
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Change to src and run Bun script
+        run: |
+          cd src
+          bun install
+          bun all

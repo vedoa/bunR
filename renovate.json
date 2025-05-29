@@ -8,7 +8,7 @@
   ],
   "customManagers": [
     {
-      "customType": 'regex',
+      "customType": "regex",
       "fileMatch": ["README.md"],
       "matchStrings": [
         "docker pull oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",

@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    "group:allNonMajor"
+  ],
   "regexManagers": [
     {
       "fileMatch": ["README.md"],

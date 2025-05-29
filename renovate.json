@@ -6,8 +6,9 @@
     ":ignoreUnstable",
     "group:allNonMajor"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": 'regex',
       "fileMatch": ["README.md"],
       "matchStrings": [
         "docker pull oven/bun:(?<currentValue>\\d+\\.\\d+\\.\\d+)",

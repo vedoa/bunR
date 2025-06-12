@@ -11,7 +11,7 @@ jobs:
   bun-run:
     runs-on: ubuntu-latest
     container:
-      image: oven/bun:1.2.15-debian
+      image: oven/bun:1.2.16-debian
 
     steps:
       - name: Checkout code

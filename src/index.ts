@@ -1,8 +1,8 @@
-import { Elysia, error, t } from "elysia";
 import swagger from "@elysiajs/swagger";
-import { setupR } from "./R/setupR";
-import { getCustomRFunction } from "./R/setFunctions";
+import { Elysia, error, t } from "elysia";
 import type { RDouble, RFunction } from "webr";
+import { getCustomRFunction } from "./R/setFunctions";
+import { setupR } from "./R/setupR";
 
 const webR = await setupR();
 
@@ -15,11 +15,10 @@ const app = new Elysia()
 	.get(
 		"/rnorm",
 		async ({ query }) => {
-			if(query.seed !== undefined){
+			if (query.seed !== undefined) {
 				await webR.evalRVoid(`set.seed(${query.seed})`);
 			}
-			const result = (
-				await rnorm(
+			const result = (await rnorm(
 				Math.floor(query.n === undefined ? 10 : query.n),
 				query.mean === undefined ? 0 : query.mean,
 				query.sd === undefined ? 1 : query.sd,
@@ -33,7 +32,7 @@ const app = new Elysia()
 				n: t.Optional(t.Numeric({ minimum: 1 })),
 				mean: t.Optional(t.Numeric({ default: 0 })),
 				sd: t.Optional(t.Numeric({ minimum: 1 })),
-				seed: t.Optional(t.Numeric())
+				seed: t.Optional(t.Numeric()),
 			}),
 		},
 	)

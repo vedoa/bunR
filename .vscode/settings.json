@@ -6,5 +6,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "biome.lsp.bin": "./src/node_modules/@biomejs/cli-linux-x64/biome"
+  "biome.lsp.bin": "./src/node_modules/@biomejs/cli-linux-x64/biome",
+  "biome.enabled": true
 }

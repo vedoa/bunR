@@ -1,8 +1,18 @@
 import swagger from "@elysiajs/swagger";
-import { Elysia, error, t } from "elysia";
+import { Elysia, t } from "elysia";
 import type { RDouble, RFunction } from "webr";
 import { getCustomRFunction } from "./R/setFunctions";
 import { setupR } from "./R/setupR";
+
+class HttpError extends Error {
+	status: number;
+
+	constructor(status: number, message: string) {
+		super(message);
+		this.status = status;
+		this.name = "HttpError";
+	}
+}
 
 const webR = await setupR();
 
@@ -39,9 +49,14 @@ const app = new Elysia()
 	.post(
 		"/minpack",
 		async ({ body }) => {
-			if (body.t.length !== body.y.length) {
-				return error(400, "Bad Request - y and t have to be the same length");
+			if (body.t.length === 0 || body.y.length === 0) {
+				throw new HttpError(404, "No data provided");
 			}
+
+			if (body.t.length !== body.y.length) {
+				throw new HttpError(400, "y and t must be the same length");
+			}
+
 			const result = (await minpack(body.y, body.t)) as RDouble;
 			return {
 				minpack: result,
@@ -56,6 +71,19 @@ const app = new Elysia()
 			}),
 		},
 	)
+	.onError(({ error }) => {
+		if (error instanceof HttpError) {
+			return {
+				status: error.status,
+				message: error.message,
+			};
+		}
+
+		return {
+			status: 500,
+			message: "Internal Server Error",
+		};
+	})
 	.listen(3001);
 
 console.log(

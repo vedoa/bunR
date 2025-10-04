@@ -1,3 +1,4 @@
+import { staticPlugin } from "@elysiajs/static";
 import swagger from "@elysiajs/swagger";
 import { Elysia, t } from "elysia";
 import type { RDouble, RFunction } from "webr";
@@ -21,7 +22,8 @@ const minpack = (await getCustomRFunction(webR, "./R/minpack.R")) as RFunction;
 
 const app = new Elysia()
 	.use(swagger())
-	.get("/", () => "WebR with Bun example! :D") // Home screen - maybe something more R like would be appropriate
+	.use(staticPlugin({ assets: "./public" }))
+	.get("/", () => Bun.file("public/index.html"))
 	.get(
 		"/rnorm",
 		async ({ query }) => {

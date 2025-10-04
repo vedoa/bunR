@@ -19,7 +19,7 @@ describe("Elysia API with webR example", () => {
 		const text = await res.text();
 
 		expect(res.status).toBe(200);
-		expect(text).toBe("WebR with Bun example! :D");
+		expect(text).toBe(await Bun.file("./public/index.html").text());
 	});
 
 	it("GET /rnorm should return n random normal variables", async () => {

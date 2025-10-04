@@ -88,8 +88,10 @@ I will build a REST api using
 
 - [ElysiaJS](https://elysiajs.com/) - backend/routing etc.
 - [@elysiajs/swagger](https://elysiajs.com/plugins/swagger) - plugin to auto-generate openapi page
+- [@elysiajs/static](https://elysiajs.com/plugins/swagger) - plugin to serve static content
 - [WebR](https://docs.r-wasm.org/webr/latest/) - model fitting and random number generation
 - [biomejs](https://biomejs.dev/) - lint and format
+- [vanjs](https://vanjs.org/) - minimal reactive frontend library 
 
 Running
 
@@ -97,6 +99,10 @@ Running
 bun runREST
 ```
 
-will make the REST API available under localhost:3001. 
+will make the REST API and WEB UI available under localhost:3001. 
 
 You can test the endpoints with the default values using the openapi endpoint localhost:3001/swagger.
+
+## Acknowledgments
+
+Microsoft. (2025). *Copilot (GPT-4)* [Large Language Model]. Retrieved from [https://copilot.microsoft.com](https://copilot.microsoft.com)

@@ -1,2 +1,8 @@
-/src/R/libraries
-/src/public/frontend.js
+
+# Ignore everything in /src/R/libraries
+/src/R/libraries/*
+
+# But don't ignore README.MD
+!/src/R/libraries/README.MD
+
+/src/public/*.js

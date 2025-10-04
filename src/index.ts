@@ -21,7 +21,7 @@ const minpack = (await getCustomRFunction(webR, "./R/minpack.R")) as RFunction;
 
 const app = new Elysia()
 	.use(swagger())
-	.get("/", () => "WebR with Bun example! :D")
+	.get("/", () => "WebR with Bun example! :D") // Home screen - maybe something more R like would be appropriate
 	.get(
 		"/rnorm",
 		async ({ query }) => {
@@ -45,7 +45,7 @@ const app = new Elysia()
 				seed: t.Optional(t.Numeric()),
 			}),
 		},
-	)
+	) // /rnorm endpoint
 	.post(
 		"/minpack",
 		async ({ body }) => {
@@ -70,7 +70,7 @@ const app = new Elysia()
 				}),
 			}),
 		},
-	)
+	) // /minpack endpoint
 	.onError(({ error }) => {
 		if (error instanceof HttpError) {
 			return {
@@ -83,9 +83,10 @@ const app = new Elysia()
 			status: 500,
 			message: "Internal Server Error",
 		};
-	})
+	}) // what to do in unchecked case
 	.listen(3001);
 
+// Log
 console.log(
 	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
 );

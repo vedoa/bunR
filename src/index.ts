@@ -31,9 +31,9 @@ const app = new Elysia()
 				await webR.evalRVoid(`set.seed(${query.seed})`);
 			}
 			const result = (await rnorm(
-				Math.floor(query.n === undefined ? 10 : query.n),
-				query.mean === undefined ? 0 : query.mean,
-				query.sd === undefined ? 1 : query.sd,
+				Math.floor(query.n ?? 10),
+				query.mean ?? 0,
+				query.sd ?? 1,
 			)) as RDouble;
 			return {
 				rnorm: result,

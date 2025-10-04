@@ -18,23 +18,26 @@ const parseNumberArray = (value: string): number[] =>
 // rnorm form
 const rnormForm = form(
 	{
-		onsubmit: async (e: SubmitEvent) => {
+		onsubmit: (e: SubmitEvent) => {
 			e.preventDefault();
-			const target = e.target as HTMLFormElement;
-			const formData = new FormData(target);
-			const params = new URLSearchParams();
 
-			for (const [key, value] of formData.entries()) {
-				if (value !== "") params.append(key, value.toString());
-			}
+			(async () => {
+				const target = e.target as HTMLFormElement;
+				const formData = new FormData(target);
+				const params = new URLSearchParams();
 
-			try {
-				const res = await fetch(`${apiBase}/rnorm?${params}`);
-				const data = await res.json();
-				rnormResult.val = JSON.stringify(data.rnorm.values, null, 2);
-			} catch (err) {
-				rnormResult.val = `Error: ${(err as Error).message}`;
-			}
+				for (const [key, value] of formData.entries()) {
+					if (value !== "") params.append(key, value.toString());
+				}
+
+				try {
+					const res = await fetch(`${apiBase}/rnorm?${params}`);
+					const data = await res.json();
+					rnormResult.val = JSON.stringify(data.rnorm.values, null, 2);
+				} catch (err) {
+					rnormResult.val = `Error: ${(err as Error).message}`;
+				}
+			})();
 		},
 	},
 	h2("rnorm"),
@@ -49,26 +52,29 @@ const rnormForm = form(
 // minpack form
 const minpackForm = form(
 	{
-		onsubmit: async (e: SubmitEvent) => {
+		onsubmit: (e: SubmitEvent) => {
 			e.preventDefault();
-			const target = e.target as HTMLFormElement;
-			const tInput = target.t as HTMLInputElement;
-			const yInput = target.y as HTMLInputElement;
 
-			const t = parseNumberArray(tInput.value);
-			const y = parseNumberArray(yInput.value);
+			(async () => {
+				const target = e.target as HTMLFormElement;
+				const tInput = target.t as HTMLInputElement;
+				const yInput = target.y as HTMLInputElement;
 
-			try {
-				const res = await fetch(`${apiBase}/minpack`, {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ t, y }),
-				});
-				const data = await res.json();
-				minpackResult.val = JSON.stringify(data.minpack.values, null, 2);
-			} catch (err) {
-				minpackResult.val = `Error: ${(err as Error).message}`;
-			}
+				const t = parseNumberArray(tInput.value);
+				const y = parseNumberArray(yInput.value);
+
+				try {
+					const res = await fetch(`${apiBase}/minpack`, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ t, y }),
+					});
+					const data = await res.json();
+					minpackResult.val = JSON.stringify(data.minpack.values, null, 2);
+				} catch (err) {
+					minpackResult.val = `Error: ${(err as Error).message}`;
+				}
+			})();
 		},
 	},
 	h2("minpack"),

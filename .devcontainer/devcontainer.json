@@ -1,5 +1,5 @@
 {
-	"image": "oven/bun:1.3.5-debian",
+	"image": "oven/bun:1.3.6-debian",
 	"customizations": {
 		"vscode": {
 			"extensions": [

@@ -52,7 +52,7 @@ To get started, run:
 Add the dependencies
 
 ```
-bun add elysia @elysiajs/swagger webr
+bun add elysia @elysiajs/openapi webr
 ```
 
 add dev dependencies for linting and formatting
@@ -87,7 +87,7 @@ Add script(s) to the package.json file for easier calling of repeated steps
 I will build a REST api using
 
 - [ElysiaJS](https://elysiajs.com/) - backend/routing etc.
-- [@elysiajs/swagger](https://elysiajs.com/plugins/swagger) - plugin to auto-generate openapi page
+- [@elysiajs/openapi](https://elysiajs.com/plugins/openapi) - plugin to auto-generate openapi page
 - [@elysiajs/static](https://elysiajs.com/plugins/static) - plugin to serve static content
 - [WebR](https://docs.r-wasm.org/webr/latest/) - model fitting and random number generation
 - [biomejs](https://biomejs.dev/) - lint and format
@@ -101,7 +101,7 @@ bun runREST
 
 will make the REST API and WEB UI available under localhost:3001. 
 
-You can test the endpoints with the default values using the openapi endpoint localhost:3001/swagger.
+You can test the endpoints with the default values using the openapi endpoint localhost:3001/openapi.
 
 ## Acknowledgments
 

@@ -5,7 +5,7 @@ let server: ReturnType<typeof app.listen>;
 let url: string;
 beforeAll(() => {
 	server = app;
-	const port = (server.server as Bun.Server).port;
+	const port = server.server?.port;
 	url = `http://localhost:${port}/`;
 });
 

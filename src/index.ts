@@ -1,5 +1,5 @@
+import openapi from "@elysiajs/openapi";
 import { staticPlugin } from "@elysiajs/static";
-import swagger from "@elysiajs/swagger";
 import { Elysia, t } from "elysia";
 import type { RDouble, RFunction } from "webr";
 import { getCustomRFunction } from "./R/setFunctions";
@@ -21,7 +21,7 @@ const rnorm = (await webR.evalR("rnorm")) as RFunction;
 const minpack = (await getCustomRFunction(webR, "./R/minpack.R")) as RFunction;
 
 const app = new Elysia()
-	.use(swagger())
+	.use(openapi())
 	.use(staticPlugin({ assets: "./public" }))
 	.get("/", () => Bun.file("public/index.html"))
 	.get(

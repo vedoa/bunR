@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!**/R"]
+		"includes": ["**", "!**/R", "!**/public"]
 	},
 	"formatter": {
 		"enabled": true,

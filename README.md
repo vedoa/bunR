@@ -12,18 +12,18 @@ You will need to either [install bun](https://bun.sh/docs/installation) or use a
 Get the image that you like the most. Example
 
 ```
-docker pull oven/bun:1.3.11-debian
+docker pull oven/bun:1.3.11
 ```
 
 Run the image mounting the src folder into the container
 
 ```
-docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.3.11-debian bash
+docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.3.11 bash
 ```
 
 ### VS Code setup
 
-Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.3.11-debian container.
+Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.3.11 container.
 
 ## Recreate setup from scratch
 
@@ -88,7 +88,7 @@ I will build a REST api using
 
 - [ElysiaJS](https://elysiajs.com/) - backend/routing etc.
 - [@elysiajs/swagger](https://elysiajs.com/plugins/swagger) - plugin to auto-generate openapi page
-- [@elysiajs/static](https://elysiajs.com/plugins/swagger) - plugin to serve static content
+- [@elysiajs/static](https://elysiajs.com/plugins/static) - plugin to serve static content
 - [WebR](https://docs.r-wasm.org/webr/latest/) - model fitting and random number generation
 - [biomejs](https://biomejs.dev/) - lint and format
 - [vanjs](https://vanjs.org/) - minimal reactive frontend library 

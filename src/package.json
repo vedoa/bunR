@@ -3,18 +3,18 @@
 	"module": "index.ts",
 	"type": "module",
 	"devDependencies": {
-		"@biomejs/biome": "2.4.12",
-		"@types/bun": "1.3.12"
+		"@biomejs/biome": "2.4.13",
+		"@types/bun": "1.3.13"
 	},
 	"peerDependencies": {
 		"typescript": "6.0.3"
 	},
 	"dependencies": {
-		"@elysiajs/openapi": "1.4.14",
-		"@elysiajs/static": "1.4.9",
+		"@elysiajs/openapi": "1.4.15",
+		"@elysiajs/static": "1.4.10",
 		"elysia": "1.4.28",
 		"vanjs-core": "1.6.0",
-		"webr": "0.5.8"
+		"webr": "0.5.9"
 	},
 	"scripts": {
 		"runREST": "bun build ./frontend.ts --outdir public/ &&  bun run ./index.ts"

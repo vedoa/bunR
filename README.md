@@ -12,18 +12,18 @@ You will need to either [install bun](https://bun.sh/docs/installation) or use a
 Get the image that you like the most. Example
 
 ```
-docker pull oven/bun:1.3.14
+docker pull oven/bun:1.4.0
 ```
 
 Run the image mounting the src folder into the container
 
 ```
-docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.3.14 bash
+docker container run --rm -it -p 3000:3000 -v ./src:/home/bun/app oven/bun:1.4.0 bash
 ```
 
 ### VS Code setup
 
-Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.3.14 container.
+Install the dev containers extension in vs code. Once you open this project vs code will prompt you to open the project in the bun:1.4.0 container.
 
 ## Recreate setup from scratch
 

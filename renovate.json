@@ -18,14 +18,14 @@
       "depNameTemplate": "oven/bun",
       "datasourceTemplate": "docker"
     },
-    {
-      "customType": "regex",
-      "fileMatch": ["biome.json"],
-      "matchStrings": [
-        "https://biomejs.dev/schemas/(?<currentValue>.*)/schema.json"
-      ],
-      "depNameTemplate": "@biomejs/biome",
-      "datasourceTemplate": "npm"
-    }
+    {
+      "customType": "regex",
+      "fileMatch": ["biome.json"],
+      "matchStrings": [
+        "https://biomejs.dev/schemas/(?<currentValue>.*)/schema.json"
+      ],
+      "depNameTemplate": "@biomejs/biome",
+      "datasourceTemplate": "npm"
+    }
   ]
 }

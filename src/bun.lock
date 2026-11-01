@@ -8,7 +8,7 @@
         "@elysiajs/openapi": "1.4.16",
         "@elysiajs/static": "1.4.10",
         "elysia": "1.4.30",
-        "vanjs-core": "1.6.1",
+        "vanjs-core": "1.6.2",
         "webr": "0.6.0",
       },
       "devDependencies": {
@@ -275,7 +275,7 @@
 
     "util-deprecate": ["util-deprecate@1.0.2", "", {}, "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="],
 
-    "vanjs-core": ["vanjs-core@1.6.1", "", {}, "sha512-CPUteb4/iW3hB7TLTKI9A9YMRTAQFpPz5n1/+vfnPxNs2wOI9HvSg6K3B/9x+uycX8eefqopBcakr2vJeHgIgw=="],
+    "vanjs-core": ["vanjs-core@1.6.2", "", {}, "sha512-Scc6y3l8/5b4zq67rslr4PA6RHqgJt84S8FLzHm1efPJkPMl22szOFXZWPAkGswm2GE+sMTkXKcR5UbTRg4BZQ=="],
 
     "w3c-keyname": ["w3c-keyname@2.2.8", "", {}, "sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ=="],
 
